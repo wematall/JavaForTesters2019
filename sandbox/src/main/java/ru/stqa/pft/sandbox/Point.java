@@ -19,5 +19,13 @@ public class Point {
 		this.y2 = y2;
 	}
 
+	public double distance() {
+		double a = x1 - x2;
+		double b = y1 - y2;
+		double result = Math.sqrt((a*a) + (b*b));
+
+		return result;
+	}
+
 
 }
