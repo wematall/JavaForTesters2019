@@ -1,2 +1,2 @@
-# JavaRotTesters2019
+# JavaForTesters2019
 Курсы программирования для тестировщиков
