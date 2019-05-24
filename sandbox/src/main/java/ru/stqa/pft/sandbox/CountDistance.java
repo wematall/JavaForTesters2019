@@ -4,13 +4,16 @@ public class CountDistance {
 
 	public static void main(String[] args) {
 
-		Point d1 = new Point(2, 4, 3, 6);
-		Point d2 = new Point(-2, 4, -3, 6);
-		Point d3 = new Point(0, 0, 0, 0);
+		Point p1 = new Point(2, 4);
+		Point p2 = new Point(3, 6);
+		Point p3 = new Point(-2, 4);
+		Point p4 = new Point(-3, 6);
+		Point p5 = new Point(0, 0);
+		Point p6 = new Point(0, 0);
 
-		System.out.println(d1.distance());
-		System.out.println(d2.distance());
-		System.out.println(d3.distance());
+		System.out.println(p1.getdistance(p2));
+		System.out.println(p3.getdistance(p4));
+		System.out.println(p5.getdistance(p6));
 
 	}
 
