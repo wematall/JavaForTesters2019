@@ -16,11 +16,12 @@ public class ContactCreationTests {
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+    driver.get("http://192.168.63.138/addressbook/");
+    login();
   }
 
-  @Test
-  public void testContactCreation() throws Exception {
-    driver.get("http://192.168.63.138/addressbook/");
+  private void login() {
     driver.findElement(By.name("user")).click();
     driver.findElement(By.name("user")).clear();
     driver.findElement(By.name("user")).sendKeys("admin");
@@ -28,7 +29,27 @@ public class ContactCreationTests {
     driver.findElement(By.name("pass")).clear();
     driver.findElement(By.name("pass")).sendKeys("secret");
     driver.findElement(By.xpath("//input[@value='Login']")).click();
-    driver.findElement(By.linkText("add new")).click();
+  }
+
+  @Test
+  public void testContactCreation() throws Exception {
+
+    initContactCreation();
+    fillContactForm();
+    submitContactForm();
+    logout();
+    
+  }
+
+  private void logout() {
+    driver.findElement(By.linkText("Logout")).click();
+  }
+
+  private void submitContactForm() {
+    driver.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
+  }
+
+  private void fillContactForm() {
     driver.findElement(By.name("firstname")).click();
     driver.findElement(By.name("firstname")).clear();
     driver.findElement(By.name("firstname")).sendKeys("testName");
@@ -97,8 +118,10 @@ public class ContactCreationTests {
     driver.findElement(By.name("notes")).click();
     driver.findElement(By.name("notes")).clear();
     driver.findElement(By.name("notes")).sendKeys("some notes, some comments here");
-    driver.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
-    driver.findElement(By.linkText("Logout")).click();
+  }
+
+  private void initContactCreation() {
+    driver.findElement(By.linkText("add new")).click();
   }
 
   @AfterMethod(alwaysRun = true)
