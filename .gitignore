@@ -4,6 +4,9 @@
 sandbox/build/*
 sandbox/out/
 
+addressbook-web-tests/build/*
+addressbook-web-tests/out/
+
 .idea/workspace.xml
 
 # Ignore Gradle GUI config
