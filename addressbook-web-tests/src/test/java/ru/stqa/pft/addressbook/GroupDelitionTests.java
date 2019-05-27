@@ -16,7 +16,7 @@ public class GroupDelitionTests {
   }
 
   @Test
-  public void testGroupDelitionTests() throws Exception {
+  public void testGroupDelition() throws Exception {
     wd.get("http://192.168.63.138/addressbook/");
     wd.findElement(By.name("user")).click();
     wd.findElement(By.name("user")).clear();
