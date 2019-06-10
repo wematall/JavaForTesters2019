@@ -60,4 +60,16 @@ public class ContactHelper extends HelperBase{
 		type(By.name("notes"), contactData.getNotes());
 
 	}
+
+	public void selectContact() {
+		click(By.name("selected[]"));
+	}
+
+	public void initContactModification() {
+		click(By.xpath("//img[@alt='Edit']"));
+	}
+
+	public void submitContactModification() {
+		click(By.name("update"));
+	}
 }
