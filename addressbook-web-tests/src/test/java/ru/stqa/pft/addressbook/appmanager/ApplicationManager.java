@@ -43,9 +43,11 @@ public class ApplicationManager {
 		sessionHelper = new SessionHelper(wd);
 
 		sessionHelper.login("admin", "secret");
+
 	}
 
 	public void stop() {
+		sessionHelper.logout();
 		wd.quit();
 	}
 
