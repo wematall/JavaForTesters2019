@@ -25,6 +25,7 @@ public class ContactData {
 	private final String address2;
 	private final String phoneHome2;
 	private final String notes;
+	private final String group;
 
 /*	public ContactData(String firstName, String phoneHome, String email) {
 		this.firstName = firstName;
@@ -32,7 +33,13 @@ public class ContactData {
 		this.email     = email;
 	}*/
 
-	public ContactData(String middleName, String lastName, String nickName, String title, String companyName, String address, String phoneHome, String phoneMobile, String phoneWork, String fax, String email, String firstName, String email2, String email3, String webPage, String birthDay, String birthMonth, String birthYear, String annyversaryDay, String annyversaryMonth, String annyversaryYear, String address2, String phoneHome2, String notes) {
+/*	public ContactData(String firstName, String lastName, String group){
+		this.firstName = firstName;
+		this.lastName  = lastName;
+		this.group     = group;
+	}*/
+
+	public ContactData(String middleName, String lastName, String nickName, String title, String companyName, String address, String phoneHome, String phoneMobile, String phoneWork, String fax, String email, String firstName, String email2, String email3, String webPage, String birthDay, String birthMonth, String birthYear, String annyversaryDay, String annyversaryMonth, String annyversaryYear, String group, String address2, String phoneHome2, String notes) {
 		this.middleName = middleName;
 		this.lastName = lastName;
 		this.nickName = nickName;
@@ -54,6 +61,7 @@ public class ContactData {
 		this.annyversaryDay = annyversaryDay;
 		this.annyversaryMonth = annyversaryMonth;
 		this.annyversaryYear = annyversaryYear;
+		this.group = group;
 		this.address2 = address2;
 		this.phoneHome2 = phoneHome2;
 		this.notes = notes;
@@ -154,4 +162,6 @@ public class ContactData {
 	public String getNotes() {
 		return notes;
 	}
+
+	public String getGroup() { return group;}
 }
