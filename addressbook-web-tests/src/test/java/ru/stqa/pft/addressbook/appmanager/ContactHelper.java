@@ -91,4 +91,15 @@ public class ContactHelper extends HelperBase{
 	public void submitContactDeletion() {
 		wd.switchTo().alert().accept();
 	}
+
+	public void createContact(ContactData contact, boolean creation) {
+		initContactCreation();
+		fillContactForm(contact, creation);
+		submitContactForm();
+	}
+
+
+	public boolean isThereContact() {
+		return isElementPresent(By.name("selected[]"));
+	}
 }
