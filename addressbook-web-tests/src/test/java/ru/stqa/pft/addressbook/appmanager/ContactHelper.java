@@ -58,6 +58,7 @@ public class ContactHelper extends HelperBase{
 
 		type(By.name("ayear"), contactData.getAnnyversaryYear());
 
+
 		if (creation) {
 			new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
 		}
