@@ -116,7 +116,7 @@ public class ContactHelper extends HelperBase{
 		List<WebElement>  elements = wd.findElements(By.name("entry"));
 		for(WebElement element : elements) {
 			String name = element.getText();
-			String id = element.findElement(By.tagName("input")).getAttribute("value");
+			int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
 			ContactData contact = new ContactData(id,"testMiddleName", "testLastName", "testNickname", "mr", "testCompany", "testCity, st. testStreet, 11", "11111111111", "22222222222", "22222222222", "33333333333", "testmail@mail.test", "testFirstName", "testmai2@mail.test", "testmail3@mail.test", "www.somewebpage.test", "7", "August", "1988", "11", "December", "2011", "test 1","testCity2, st. testStreet, 111", "internet virtual home", "some notes, some comments here");
 			contacts.add(contact);
 		}

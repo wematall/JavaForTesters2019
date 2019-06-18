@@ -3,7 +3,77 @@ package ru.stqa.pft.addressbook.model;
 import java.util.Objects;
 
 public class ContactData {
-	private final String id;
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		ContactData that = (ContactData) o;
+		return id == that.id &&
+						Objects.equals(middleName, that.middleName) &&
+						Objects.equals(lastName, that.lastName) &&
+						Objects.equals(nickName, that.nickName) &&
+						Objects.equals(title, that.title) &&
+						Objects.equals(companyName, that.companyName) &&
+						Objects.equals(address, that.address) &&
+						Objects.equals(phoneHome, that.phoneHome) &&
+						Objects.equals(phoneMobile, that.phoneMobile) &&
+						Objects.equals(phoneWork, that.phoneWork) &&
+						Objects.equals(fax, that.fax) &&
+						Objects.equals(email, that.email) &&
+						Objects.equals(firstName, that.firstName) &&
+						Objects.equals(email2, that.email2) &&
+						Objects.equals(email3, that.email3) &&
+						Objects.equals(webPage, that.webPage) &&
+						Objects.equals(birthDay, that.birthDay) &&
+						Objects.equals(birthMonth, that.birthMonth) &&
+						Objects.equals(birthYear, that.birthYear) &&
+						Objects.equals(annyversaryDay, that.annyversaryDay) &&
+						Objects.equals(annyversaryMonth, that.annyversaryMonth) &&
+						Objects.equals(annyversaryYear, that.annyversaryYear) &&
+						Objects.equals(address2, that.address2) &&
+						Objects.equals(phoneHome2, that.phoneHome2) &&
+						Objects.equals(notes, that.notes) &&
+						Objects.equals(group, that.group);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, middleName, lastName, nickName, title, companyName, address, phoneHome, phoneMobile, phoneWork, fax, email, firstName, email2, email3, webPage, birthDay, birthMonth, birthYear, annyversaryDay, annyversaryMonth, annyversaryYear, address2, phoneHome2, notes, group);
+	}
+
+	@Override
+	public String toString() {
+		return "ContactData{" +
+						"id=" + id +
+						", middleName='" + middleName + '\'' +
+						", lastName='" + lastName + '\'' +
+						", nickName='" + nickName + '\'' +
+						", title='" + title + '\'' +
+						", companyName='" + companyName + '\'' +
+						", address='" + address + '\'' +
+						", phoneHome='" + phoneHome + '\'' +
+						", phoneMobile='" + phoneMobile + '\'' +
+						", phoneWork='" + phoneWork + '\'' +
+						", fax='" + fax + '\'' +
+						", email='" + email + '\'' +
+						", firstName='" + firstName + '\'' +
+						", email2='" + email2 + '\'' +
+						", email3='" + email3 + '\'' +
+						", webPage='" + webPage + '\'' +
+						", birthDay='" + birthDay + '\'' +
+						", birthMonth='" + birthMonth + '\'' +
+						", birthYear='" + birthYear + '\'' +
+						", annyversaryDay='" + annyversaryDay + '\'' +
+						", annyversaryMonth='" + annyversaryMonth + '\'' +
+						", annyversaryYear='" + annyversaryYear + '\'' +
+						", address2='" + address2 + '\'' +
+						", phoneHome2='" + phoneHome2 + '\'' +
+						", notes='" + notes + '\'' +
+						", group='" + group + '\'' +
+						'}';
+	}
+
+	private int id;
 	private final String middleName;
 	private final String lastName;
 	private final String nickName;
@@ -42,77 +112,7 @@ public class ContactData {
 		this.group     = group;
 	}*/
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
-		ContactData that = (ContactData) o;
-		return Objects.equals(id, that.id) &&
-						Objects.equals(middleName, that.middleName) &&
-						Objects.equals(lastName, that.lastName) &&
-						Objects.equals(nickName, that.nickName) &&
-						Objects.equals(title, that.title) &&
-						Objects.equals(companyName, that.companyName) &&
-						Objects.equals(address, that.address) &&
-						Objects.equals(phoneHome, that.phoneHome) &&
-						Objects.equals(phoneMobile, that.phoneMobile) &&
-						Objects.equals(phoneWork, that.phoneWork) &&
-						Objects.equals(fax, that.fax) &&
-						Objects.equals(email, that.email) &&
-						Objects.equals(firstName, that.firstName) &&
-						Objects.equals(email2, that.email2) &&
-						Objects.equals(email3, that.email3) &&
-						Objects.equals(webPage, that.webPage) &&
-						Objects.equals(birthDay, that.birthDay) &&
-						Objects.equals(birthMonth, that.birthMonth) &&
-						Objects.equals(birthYear, that.birthYear) &&
-						Objects.equals(annyversaryDay, that.annyversaryDay) &&
-						Objects.equals(annyversaryMonth, that.annyversaryMonth) &&
-						Objects.equals(annyversaryYear, that.annyversaryYear) &&
-						Objects.equals(address2, that.address2) &&
-						Objects.equals(phoneHome2, that.phoneHome2) &&
-						Objects.equals(notes, that.notes) &&
-						Objects.equals(group, that.group);
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(id, middleName, lastName, nickName, title, companyName, address, phoneHome, phoneMobile, phoneWork, fax, email, firstName, email2, email3, webPage, birthDay, birthMonth, birthYear, annyversaryDay, annyversaryMonth, annyversaryYear, address2, phoneHome2, notes, group);
-	}
-
-	@Override
-	public String toString() {
-		return "ContactData{" +
-						"id='" + id + '\'' +
-						", middleName='" + middleName + '\'' +
-						", lastName='" + lastName + '\'' +
-						", nickName='" + nickName + '\'' +
-						", title='" + title + '\'' +
-						", companyName='" + companyName + '\'' +
-						", address='" + address + '\'' +
-						", phoneHome='" + phoneHome + '\'' +
-						", phoneMobile='" + phoneMobile + '\'' +
-						", phoneWork='" + phoneWork + '\'' +
-						", fax='" + fax + '\'' +
-						", email='" + email + '\'' +
-						", firstName='" + firstName + '\'' +
-						", email2='" + email2 + '\'' +
-						", email3='" + email3 + '\'' +
-						", webPage='" + webPage + '\'' +
-						", birthDay='" + birthDay + '\'' +
-						", birthMonth='" + birthMonth + '\'' +
-						", birthYear='" + birthYear + '\'' +
-						", annyversaryDay='" + annyversaryDay + '\'' +
-						", annyversaryMonth='" + annyversaryMonth + '\'' +
-						", annyversaryYear='" + annyversaryYear + '\'' +
-						", address2='" + address2 + '\'' +
-						", phoneHome2='" + phoneHome2 + '\'' +
-						", notes='" + notes + '\'' +
-						", group='" + group + '\'' +
-						'}';
-	}
-
-	public ContactData(String id, String middleName, String lastName, String nickName, String title, String companyName, String address, String phoneHome, String phoneMobile, String phoneWork, String fax, String email, String firstName, String email2, String email3, String webPage, String birthDay, String birthMonth, String birthYear, String annyversaryDay, String annyversaryMonth, String annyversaryYear, String group, String address2, String phoneHome2, String notes) {
+	public ContactData(int id, String middleName, String lastName, String nickName, String title, String companyName, String address, String phoneHome, String phoneMobile, String phoneWork, String fax, String email, String firstName, String email2, String email3, String webPage, String birthDay, String birthMonth, String birthYear, String annyversaryDay, String annyversaryMonth, String annyversaryYear, String group, String address2, String phoneHome2, String notes) {
 		this.id = id;
 		this.middleName = middleName;
 		this.lastName = lastName;
@@ -141,8 +141,12 @@ public class ContactData {
 		this.notes = notes;
 	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public ContactData(String middleName, String lastName, String nickName, String title, String companyName, String address, String phoneHome, String phoneMobile, String phoneWork, String fax, String email, String firstName, String email2, String email3, String webPage, String birthDay, String birthMonth, String birthYear, String annyversaryDay, String annyversaryMonth, String annyversaryYear, String group, String address2, String phoneHome2, String notes) {
-		this.id = null;
+		this.id = 0;
 		this.middleName = middleName;
 		this.lastName = lastName;
 		this.nickName = nickName;
@@ -170,7 +174,7 @@ public class ContactData {
 		this.notes = notes;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
