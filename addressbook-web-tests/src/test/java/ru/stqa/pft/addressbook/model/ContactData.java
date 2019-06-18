@@ -1,5 +1,7 @@
 package ru.stqa.pft.addressbook.model;
 
+import java.util.Objects;
+
 public class ContactData {
 	private final String middleName;
 	private final String lastName;
@@ -164,4 +166,72 @@ public class ContactData {
 	}
 
 	public String getGroup() { return group;}
+
+	@Override
+	public String toString() {
+		return "ContactData{" +
+						"middleName='" + middleName + '\'' +
+						", lastName='" + lastName + '\'' +
+						", nickName='" + nickName + '\'' +
+						", title='" + title + '\'' +
+						", companyName='" + companyName + '\'' +
+						", address='" + address + '\'' +
+						", phoneHome='" + phoneHome + '\'' +
+						", phoneMobile='" + phoneMobile + '\'' +
+						", phoneWork='" + phoneWork + '\'' +
+						", fax='" + fax + '\'' +
+						", email='" + email + '\'' +
+						", firstName='" + firstName + '\'' +
+						", email2='" + email2 + '\'' +
+						", email3='" + email3 + '\'' +
+						", webPage='" + webPage + '\'' +
+						", birthDay='" + birthDay + '\'' +
+						", birthMonth='" + birthMonth + '\'' +
+						", birthYear='" + birthYear + '\'' +
+						", annyversaryDay='" + annyversaryDay + '\'' +
+						", annyversaryMonth='" + annyversaryMonth + '\'' +
+						", annyversaryYear='" + annyversaryYear + '\'' +
+						", address2='" + address2 + '\'' +
+						", phoneHome2='" + phoneHome2 + '\'' +
+						", notes='" + notes + '\'' +
+						", group='" + group + '\'' +
+						'}';
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		ContactData that = (ContactData) o;
+		return Objects.equals(middleName, that.middleName) &&
+						Objects.equals(lastName, that.lastName) &&
+						Objects.equals(nickName, that.nickName) &&
+						Objects.equals(title, that.title) &&
+						Objects.equals(companyName, that.companyName) &&
+						Objects.equals(address, that.address) &&
+						Objects.equals(phoneHome, that.phoneHome) &&
+						Objects.equals(phoneMobile, that.phoneMobile) &&
+						Objects.equals(phoneWork, that.phoneWork) &&
+						Objects.equals(fax, that.fax) &&
+						Objects.equals(email, that.email) &&
+						Objects.equals(firstName, that.firstName) &&
+						Objects.equals(email2, that.email2) &&
+						Objects.equals(email3, that.email3) &&
+						Objects.equals(webPage, that.webPage) &&
+						Objects.equals(birthDay, that.birthDay) &&
+						Objects.equals(birthMonth, that.birthMonth) &&
+						Objects.equals(birthYear, that.birthYear) &&
+						Objects.equals(annyversaryDay, that.annyversaryDay) &&
+						Objects.equals(annyversaryMonth, that.annyversaryMonth) &&
+						Objects.equals(annyversaryYear, that.annyversaryYear) &&
+						Objects.equals(address2, that.address2) &&
+						Objects.equals(phoneHome2, that.phoneHome2) &&
+						Objects.equals(notes, that.notes) &&
+						Objects.equals(group, that.group);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(middleName, lastName, nickName, title, companyName, address, phoneHome, phoneMobile, phoneWork, fax, email, firstName, email2, email3, webPage, birthDay, birthMonth, birthYear, annyversaryDay, annyversaryMonth, annyversaryYear, address2, phoneHome2, notes, group);
+	}
 }
