@@ -21,22 +21,6 @@ public class GroupData {
 	}
 
 	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
-		GroupData groupData = (GroupData) o;
-		return id == groupData.id &&
-						Objects.equals(groupName, groupData.groupName) &&
-						Objects.equals(groupHeader, groupData.groupHeader) &&
-						Objects.equals(groupFooter, groupData.groupFooter);
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(id, groupName, groupHeader, groupFooter);
-	}
-
-	@Override
 	public String toString() {
 		return "GroupData{" +
 						"id=" + id +
@@ -46,8 +30,23 @@ public class GroupData {
 						'}';
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		GroupData groupData = (GroupData) o;
+		return Objects.equals(groupName, groupData.groupName) &&
+						Objects.equals(groupHeader, groupData.groupHeader) &&
+						Objects.equals(groupFooter, groupData.groupFooter);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(groupName, groupHeader, groupFooter);
+	}
+
 	public GroupData(String groupName, String groupHeader, String groupFooter) {
-		this.id = 0;
+		this.id = Integer.MAX_VALUE;
 		this.groupName = groupName;
 		this.groupHeader = groupHeader;
 		this.groupFooter = groupFooter;
