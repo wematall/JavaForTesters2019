@@ -36,32 +36,32 @@ public class ContactData {
 						'}';
 	}
 
-	private int id;
-	private final String middleName;
-	private final String lastName;
-	private final String nickName;
-	private final String title;
-	private final String companyName;
-	private final String address;
-	private final String phoneHome;
-	private final String phoneMobile;
-	private final String phoneWork;
-	private final String fax;
-	private final String email;
-	private final String firstName;
-	private final String email2;
-	private final String email3;
-	private final String webPage;
-	private final String birthDay;
-	private final String birthMonth;
-	private final String birthYear;
-	private final String annyversaryDay;
-	private final String annyversaryMonth;
-	private final String annyversaryYear;
-	private final String address2;
-	private final String phoneHome2;
-	private final String notes;
-	private final String group;
+	private int id = Integer.MAX_VALUE;
+	private String middleName;
+	private String lastName;
+	private String nickName;
+	private String title;
+	private String companyName;
+	private String address;
+	private String phoneHome;
+	private String phoneMobile;
+	private String phoneWork;
+	private String fax;
+	private String email;
+	private String firstName;
+	private String email2;
+	private String email3;
+	private String webPage;
+	private String birthDay;
+	private String birthMonth;
+	private String birthYear;
+	private String annyversaryDay;
+	private String annyversaryMonth;
+	private String annyversaryYear;
+	private String address2;
+	private String phoneHome2;
+	private String notes;
+	private String group;
 
 /*	public ContactData(String firstName, String phoneHome, String email) {
 		this.firstName = firstName;
@@ -69,14 +69,73 @@ public class ContactData {
 		this.email     = email;
 	}*/
 
-/*	public ContactData(String firstName, String lastName, String group){
-		this.firstName = firstName;
-		this.lastName  = lastName;
-		this.group     = group;
-	}*/
+	/*	public ContactData(String firstName, String lastName, String group){
+			this.firstName = firstName;
+			this.lastName  = lastName;
+			this.group     = group;
+		}*/
 
-	public ContactData(int id, String middleName, String lastName, String nickName, String title, String companyName, String address, String phoneHome, String phoneMobile, String phoneWork, String fax, String email, String firstName, String email2, String email3, String webPage, String birthDay, String birthMonth, String birthYear, String annyversaryDay, String annyversaryMonth, String annyversaryYear, String group, String address2, String phoneHome2, String notes) {
-		this.id = id;
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		ContactData that = (ContactData) o;
+		return Objects.equals(lastName, that.lastName) &&
+						Objects.equals(firstName, that.firstName);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(lastName, firstName);
+	}
+
+	public ContactData(String lastName, String firstName) {
+  	this.id = Integer.MAX_VALUE;
+	  this.lastName  = lastName;
+	  this.firstName = firstName;
+}
+
+	public ContactData(int id, String lastName, String firstName) {
+		this.id        = id;
+		this.lastName  = lastName;
+		this.firstName = firstName;
+	}
+
+/*public ContactData (int id, String lastName, String firstName) {
+		this.id        = id;
+		this.lastName  = lastName;
+		this.firstName = firstName;
+
+		this.middleName  = null;
+		this.nickName    = null;
+		this.title       = null;
+		this.companyName = null;
+		this.address     = null;
+		this.phoneHome   = null;
+		this.phoneMobile = null;
+		this.phoneWork   = null;
+		this.fax         = null;
+		this.email       = null;
+
+		this.email2      = null;
+		this.email3      = null;
+		this.webPage     = null;
+		this.birthDay    = null;
+		this.birthMonth  = null;
+		this.birthYear   = null;
+		this.annyversaryDay = null;
+		this.annyversaryMonth = null;
+		this.annyversaryYear  = null;
+		this.address2         = null;
+		this.phoneHome2       = null;
+		this.notes            = null;
+		this.group       = null;
+	}
+
+ */
+
+/*	public ContactData(int id, String middleName, String lastName, String nickName, String title, String companyName, String address, String phoneHome, String phoneMobile, String phoneWork, String fax, String email, String firstName, String email2, String email3, String webPage, String birthDay, String birthMonth, String birthYear, String annyversaryDay, String annyversaryMonth, String annyversaryYear, String group, String address2, String phoneHome2, String notes) {
+		this.id = Integer.MAX_VALUE;
 		this.middleName = middleName;
 		this.lastName = lastName;
 		this.nickName = nickName;
@@ -103,50 +162,14 @@ public class ContactData {
 		this.phoneHome2 = phoneHome2;
 		this.notes = notes;
 	}
+*/
 
 	public void setId(int id) {
 		this.id = id;
 	}
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
-		ContactData that = (ContactData) o;
-		return Objects.equals(middleName, that.middleName) &&
-						Objects.equals(lastName, that.lastName) &&
-						Objects.equals(nickName, that.nickName) &&
-						Objects.equals(title, that.title) &&
-						Objects.equals(companyName, that.companyName) &&
-						Objects.equals(address, that.address) &&
-						Objects.equals(phoneHome, that.phoneHome) &&
-						Objects.equals(phoneMobile, that.phoneMobile) &&
-						Objects.equals(phoneWork, that.phoneWork) &&
-						Objects.equals(fax, that.fax) &&
-						Objects.equals(email, that.email) &&
-						Objects.equals(firstName, that.firstName) &&
-						Objects.equals(email2, that.email2) &&
-						Objects.equals(email3, that.email3) &&
-						Objects.equals(webPage, that.webPage) &&
-						Objects.equals(birthDay, that.birthDay) &&
-						Objects.equals(birthMonth, that.birthMonth) &&
-						Objects.equals(birthYear, that.birthYear) &&
-						Objects.equals(annyversaryDay, that.annyversaryDay) &&
-						Objects.equals(annyversaryMonth, that.annyversaryMonth) &&
-						Objects.equals(annyversaryYear, that.annyversaryYear) &&
-						Objects.equals(address2, that.address2) &&
-						Objects.equals(phoneHome2, that.phoneHome2) &&
-						Objects.equals(notes, that.notes) &&
-						Objects.equals(group, that.group);
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(middleName, lastName, nickName, title, companyName, address, phoneHome, phoneMobile, phoneWork, fax, email, firstName, email2, email3, webPage, birthDay, birthMonth, birthYear, annyversaryDay, annyversaryMonth, annyversaryYear, address2, phoneHome2, notes, group);
-	}
-
 	public ContactData(String middleName, String lastName, String nickName, String title, String companyName, String address, String phoneHome, String phoneMobile, String phoneWork, String fax, String email, String firstName, String email2, String email3, String webPage, String birthDay, String birthMonth, String birthYear, String annyversaryDay, String annyversaryMonth, String annyversaryYear, String group, String address2, String phoneHome2, String notes) {
-		this.id = Integer.MAX_VALUE;
+		//this.id = Integer.MAX_VALUE;
 		this.middleName = middleName;
 		this.lastName = lastName;
 		this.nickName = nickName;
