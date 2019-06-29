@@ -11,10 +11,10 @@ public class GroupModificationTests extends TestBase {
 
 	@BeforeMethod
 	public void ensurePreconditions() {
-		app.getNavigationHelper().gotoGroupPage();
+		app.goTo().groupPage();
 		if (! app.getGroupHelper().isThereGroup()) {
 			app.getGroupHelper().createGroup(new GroupData("test 2", null, null));
-			app.getNavigationHelper().gotoGroupPage();
+			app.goTo().groupPage();
 		}
 	}
 

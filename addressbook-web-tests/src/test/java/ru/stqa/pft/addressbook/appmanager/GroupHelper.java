@@ -8,6 +8,8 @@ import ru.stqa.pft.addressbook.model.GroupData;
 import java.util.ArrayList;
 import java.util.List;
 
+import static ru.stqa.pft.addressbook.tests.TestBase.app;
+
 public class GroupHelper extends HelperBase {
 
 	public GroupHelper(WebDriver wd) {
@@ -48,7 +50,7 @@ public class GroupHelper extends HelperBase {
 		initGroupCreation();
 		fillGroupForm(group);
 		submitGroupCreation();
-		//app.getNavigationHelper().gotoGroupPage();
+		app.goTo().groupPage();
 	}
 
 
@@ -57,7 +59,14 @@ public class GroupHelper extends HelperBase {
 		initGroupModification();
 		fillGroupForm(group);
 		submitGroupModification();
-		//app.getNavigationHelper().gotoGroupPage();
+		app.goTo().groupPage();
+	}
+
+
+	public void delete(int index) {
+		selectGroup(index);
+		deleteSelectedGroup();
+		app.goTo().groupPage();
 	}
 
 	public boolean isThereGroup() {
