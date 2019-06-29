@@ -19,7 +19,7 @@ public class ContactCreationTests extends TestBase {
     List<ContactData> before = app.getContactHelper().getContactList();
 
     app.contactHelper.initContactCreation();
-    ContactData contact = new ContactData("testMiddleName", "testLastName", "testNickname", "mr", "testCompany", "testCity, st. testStreet, 11", "11111111111", "22222222222", "22222222222", "33333333333", "testmail@mail.test", "testFirstName", "testmai2@mail.test", "testmail3@mail.test", "www.somewebpage.test", "7", "August", "1988", "11", "December", "2011", "test 1","testCity2, st. testStreet, 111", "internet virtual home", "some notes, some comments here");
+    ContactData contact = new ContactData("lastname", "firstname");
     app.contactHelper.fillContactForm(contact, true);
     app.contactHelper.submitContactForm();
 
@@ -30,6 +30,8 @@ public class ContactCreationTests extends TestBase {
 
     before.add(contact);
     Comparator<? super ContactData> byId = (c1, c2) -> Integer.compare(c1.getId(), c2.getId());
+    before.sort(byId);
+    after.sort(byId);
     Assert.assertEquals(before, after);
 
     //app.getSessionHelper().logout();
