@@ -3,7 +3,7 @@ package ru.stqa.pft.addressbook.tests;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import ru.stqa.pft.addressbook.model.GroupData;
-import java.util.List;
+import java.util.Set;
 
 
 public class GroupDeletionTests extends TestBase {
@@ -20,15 +20,15 @@ public class GroupDeletionTests extends TestBase {
   @Test
   public void testGroupDeletion() throws Exception {
 
-    List<GroupData> before = app.getGroupHelper().getGroupList();
-    int index = before.size() - 1;
-    app.getGroupHelper().delete(index);
+    Set<GroupData> before = app.getGroupHelper().all();
+    GroupData deletedGroup = before.iterator().next();
+    app.getGroupHelper().delete(deletedGroup);
 
-    List<GroupData> after = app.getGroupHelper().getGroupList();
+    Set<GroupData> after = app.getGroupHelper().all();
 
     Assert.assertEquals(after.size(), before.size() - 1);
 
-    before.remove(index);
+    before.remove(deletedGroup);
     Assert.assertEquals(after, before);
   }
 
