@@ -27,52 +27,52 @@ public class ContactHelper extends HelperBase{
 
 	public void fillContactForm(ContactData contactData, boolean creation) {
 		type(By.name("firstname"), contactData.getFirstName());
-		type(By.name("middlename"), contactData.getMiddleName());
+	//	type(By.name("middlename"), contactData.getMiddleName());
 		type(By.name("lastname"), contactData.getLastName());
-		type(By.name("nickname"), contactData.getNickName());
-		type(By.name("title"), contactData.getTitle());
-		type(By.name("company"), contactData.getCompanyName());
-		type(By.name("address"), contactData.getAddress());
-		type(By.name("home"), contactData.getPhoneHome());
-		type(By.name("mobile"), contactData.getPhoneMobile());
-		type(By.name("work"), contactData.getPhoneWork());
-		type(By.name("fax"), contactData.getFax());
-		type(By.name("email"), contactData.getEmail());
-		type(By.name("email2"), contactData.getEmail2());
-		type(By.name("email3"), contactData.getEmail3());
-		type(By.name("homepage"), contactData.getWebPage());
+	//	type(By.name("nickname"), contactData.getNickName());
+		//type(By.name("title"), contactData.getTitle());
+		//type(By.name("company"), contactData.getCompanyName());
+		//type(By.name("address"), contactData.getAddress());
+		//type(By.name("home"), contactData.getPhoneHome());
+		//type(By.name("mobile"), contactData.getPhoneMobile());
+		//type(By.name("work"), contactData.getPhoneWork());
+		//type(By.name("fax"), contactData.getFax());
+		//type(By.name("email"), contactData.getEmail());
+		//type(By.name("email2"), contactData.getEmail2());
+		//type(By.name("email3"), contactData.getEmail3());
+		//type(By.name("homepage"), contactData.getWebPage());
 
 		//пока не знаю что с этим делать
 		//по идее нужно создание этих объектов
 		//перенести в другое место
-		new Select(wd.findElement(By.name("bday"))).selectByVisibleText(contactData.getBirthDay());
-		wd.findElement(By.name("bday")).click();
+		//new Select(wd.findElement(By.name("bday"))).selectByVisibleText(contactData.getBirthDay());
+		//wd.findElement(By.name("bday")).click();
 
-		new Select(wd.findElement(By.name("bmonth"))).selectByVisibleText(contactData.getBirthMonth());
-		wd.findElement(By.name("bmonth")).click();
+	//	new Select(wd.findElement(By.name("bmonth"))).selectByVisibleText(contactData.getBirthMonth());
+	//	wd.findElement(By.name("bmonth")).click();
 
-		type(By.name("byear"), contactData.getBirthYear());
+		//type(By.name("byear"), contactData.getBirthYear());
 
-		new Select(wd.findElement(By.name("aday"))).selectByVisibleText(contactData.getAnnyversaryDay());
-		wd.findElement(By.name("aday")).click();
+	//	new Select(wd.findElement(By.name("aday"))).selectByVisibleText(contactData.getAnnyversaryDay());
+		//wd.findElement(By.name("aday")).click();
 
-		new Select(wd.findElement(By.name("amonth"))).selectByVisibleText(contactData.getAnnyversaryMonth());
-		wd.findElement(By.name("amonth")).click();
-
-
-		type(By.name("ayear"), contactData.getAnnyversaryYear());
+		//new Select(wd.findElement(By.name("amonth"))).selectByVisibleText(contactData.getAnnyversaryMonth());
+		//wd.findElement(By.name("amonth")).click();
 
 
-		if (creation) {
-			new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-		}
-		else {
-			Assert.assertFalse(isElementPresent(By.name("new_group")));
-		}
+		//type(By.name("ayear"), contactData.getAnnyversaryYear());
 
-		type(By.name("address2"), contactData.getAddress2());
-		type(By.name("phone2"), contactData.getPhoneHome2());
-		type(By.name("notes"), contactData.getNotes());
+
+	//	if (creation) {
+	//		new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+	//	}
+	//	else {
+	//		Assert.assertFalse(isElementPresent(By.name("new_group")));
+		//}
+
+		//type(By.name("address2"), contactData.getAddress2());
+		//type(By.name("phone2"), contactData.getPhoneHome2());
+		//type(By.name("notes"), contactData.getNotes());
 
 	}
 
@@ -80,8 +80,8 @@ public class ContactHelper extends HelperBase{
 		wd.findElements(By.name("selected[]")).get(index).click();
 	}
 
-	public void initContactModification() {
-		click(By.xpath("//img[@alt='Edit']"));
+	public void initContactModification(int index) {
+		wd.findElements(By.xpath("//img[@alt='Edit']")).get(index).click();
 	}
 
 	public void submitContactModification() {
@@ -118,10 +118,10 @@ public class ContactHelper extends HelperBase{
 			List<WebElement> cells = element.findElements(By.tagName("td"));
 
 
-			int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-			String lastname = cells.get(1).getText();
-			String firstname = cells.get(2).getText();
-			ContactData contact = new ContactData(id,"testMiddleName", "testLastName", "testNickname", "mr", "testCompany", "testCity, st. testStreet, 11", "11111111111", "22222222222", "22222222222", "33333333333", "testmail@mail.test", "testFirstName", "testmai2@mail.test", "testmail3@mail.test", "www.somewebpage.test", "7", "August", "1988", "11", "December", "2011", "test 1","testCity2, st. testStreet, 111", "internet virtual home", "some notes, some comments here");
+			int id              = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+			String lastname     = cells.get(1).getText();
+			String firstname    = cells.get(2).getText();
+			ContactData contact = new ContactData(id, lastname, firstname);
 			contacts.add(contact);
 		}
 		return contacts;
