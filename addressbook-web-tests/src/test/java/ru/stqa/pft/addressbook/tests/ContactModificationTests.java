@@ -14,13 +14,15 @@ public class ContactModificationTests extends TestBase {
 		app.goTo().contactPage();
 
 		if (app.contact().list().size() == 0) {
-			app.contact().create(new ContactData("testMiddleName", "testLastName", "testNickname", "mr", "testCompany", "testCity, st. testStreet, 11", "11111111111", "22222222222", "22222222222", "33333333333", "testmail@mail.test", "testFirstName", "testmai2@mail.test", "testmail3@mail.test", "www.somewebpage.test", "7", "August", "1988", "11", "December", "2011", "test 1","testCity2, st. testStreet, 111", "internet virtual home", "some notes, some comments here"), true);
+			app.contact().create(new ContactData().withFirstName("Ivan").withLastName("Fedorof"), true);
 			app.goTo().contactPage();
 		}
 
 		List<ContactData> before = app.contact().list();
 
-		ContactData contact = new ContactData(before.get(before.size() - 1).getId(), "changedlastname", "changedfirstname");
+		ContactData contact = new ContactData()
+						.withId(before.get(before.size() - 1).getId())
+						.withLastName("Fedorof").withFirstName("Ivan");
 
 		app.contact().modify(before.size() - 1);
 

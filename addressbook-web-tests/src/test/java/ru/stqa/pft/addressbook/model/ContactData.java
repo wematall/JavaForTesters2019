@@ -63,17 +63,114 @@ public class ContactData {
 	private String notes;
 	private String group;
 
-/*	public ContactData(String firstName, String phoneHome, String email) {
-		this.firstName = firstName;
-		this.phoneHome = phoneHome;
-		this.email     = email;
-	}*/
 
-	/*	public ContactData(String firstName, String lastName, String group){
-			this.firstName = firstName;
-			this.lastName  = lastName;
-			this.group     = group;
-		}*/
+
+	public ContactData withId(int id) {
+		this.id = id;
+		return this;
+	}
+
+	public ContactData withLastName(String lastName) {
+		this.lastName = lastName;
+		return this;
+	}
+
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public void setPhoneHome(String phoneHome) {
+		this.phoneHome = phoneHome;
+	}
+
+	public void setPhoneMobile(String phoneMobile) {
+		this.phoneMobile = phoneMobile;
+	}
+
+	public void setPhoneWork(String phoneWork) {
+		this.phoneWork = phoneWork;
+	}
+
+	public void setFax(String fax) {
+		this.fax = fax;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public ContactData withFirstName(String firstName) {
+		this.firstName = firstName;
+		return this;
+	}
+
+	public void setEmail2(String email2) {
+		this.email2 = email2;
+	}
+
+	public void setEmail3(String email3) {
+		this.email3 = email3;
+	}
+
+	public void setWebPage(String webPage) {
+		this.webPage = webPage;
+	}
+
+	public void setBirthDay(String birthDay) {
+		this.birthDay = birthDay;
+	}
+
+	public void setBirthMonth(String birthMonth) {
+		this.birthMonth = birthMonth;
+	}
+
+	public void setBirthYear(String birthYear) {
+		this.birthYear = birthYear;
+	}
+
+	public void setAnnyversaryDay(String annyversaryDay) {
+		this.annyversaryDay = annyversaryDay;
+	}
+
+	public void setAnnyversaryMonth(String annyversaryMonth) {
+		this.annyversaryMonth = annyversaryMonth;
+	}
+
+	public void setAnnyversaryYear(String annyversaryYear) {
+		this.annyversaryYear = annyversaryYear;
+	}
+
+	public void setAddress2(String address2) {
+		this.address2 = address2;
+	}
+
+	public void setPhoneHome2(String phoneHome2) {
+		this.phoneHome2 = phoneHome2;
+	}
+
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
+
+	public void setGroup(String group) {
+		this.group = group;
+	}
+
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
+	}
 
 	@Override
 	public boolean equals(Object o) {
@@ -89,113 +186,7 @@ public class ContactData {
 		return Objects.hash(lastName, firstName);
 	}
 
-	public ContactData(String lastName, String firstName) {
-  	this.id = Integer.MAX_VALUE;
-	  this.lastName  = lastName;
-	  this.firstName = firstName;
-}
 
-	public ContactData(int id, String lastName, String firstName) {
-		this.id        = id;
-		this.lastName  = lastName;
-		this.firstName = firstName;
-	}
-
-/*public ContactData (int id, String lastName, String firstName) {
-		this.id        = id;
-		this.lastName  = lastName;
-		this.firstName = firstName;
-
-		this.middleName  = null;
-		this.nickName    = null;
-		this.title       = null;
-		this.companyName = null;
-		this.address     = null;
-		this.phoneHome   = null;
-		this.phoneMobile = null;
-		this.phoneWork   = null;
-		this.fax         = null;
-		this.email       = null;
-
-		this.email2      = null;
-		this.email3      = null;
-		this.webPage     = null;
-		this.birthDay    = null;
-		this.birthMonth  = null;
-		this.birthYear   = null;
-		this.annyversaryDay = null;
-		this.annyversaryMonth = null;
-		this.annyversaryYear  = null;
-		this.address2         = null;
-		this.phoneHome2       = null;
-		this.notes            = null;
-		this.group       = null;
-	}
-
- */
-
-/*	public ContactData(int id, String middleName, String lastName, String nickName, String title, String companyName, String address, String phoneHome, String phoneMobile, String phoneWork, String fax, String email, String firstName, String email2, String email3, String webPage, String birthDay, String birthMonth, String birthYear, String annyversaryDay, String annyversaryMonth, String annyversaryYear, String group, String address2, String phoneHome2, String notes) {
-		this.id = Integer.MAX_VALUE;
-		this.middleName = middleName;
-		this.lastName = lastName;
-		this.nickName = nickName;
-		this.title = title;
-		this.companyName = companyName;
-		this.address = address;
-		this.phoneHome = phoneHome;
-		this.phoneMobile = phoneMobile;
-		this.phoneWork = phoneWork;
-		this.fax = fax;
-		this.email = email;
-		this.firstName = firstName;
-		this.email2 = email2;
-		this.email3 = email3;
-		this.webPage = webPage;
-		this.birthDay = birthDay;
-		this.birthMonth = birthMonth;
-		this.birthYear = birthYear;
-		this.annyversaryDay = annyversaryDay;
-		this.annyversaryMonth = annyversaryMonth;
-		this.annyversaryYear = annyversaryYear;
-		this.group = group;
-		this.address2 = address2;
-		this.phoneHome2 = phoneHome2;
-		this.notes = notes;
-	}
-*/
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public ContactData(String middleName, String lastName, String nickName, String title, String companyName, String address, String phoneHome, String phoneMobile, String phoneWork, String fax, String email, String firstName, String email2, String email3, String webPage, String birthDay, String birthMonth, String birthYear, String annyversaryDay, String annyversaryMonth, String annyversaryYear, String group, String address2, String phoneHome2, String notes) {
-		//this.id = Integer.MAX_VALUE;
-		this.middleName = middleName;
-		this.lastName = lastName;
-		this.nickName = nickName;
-		this.title = title;
-		this.companyName = companyName;
-		this.address = address;
-		this.phoneHome = phoneHome;
-		this.phoneMobile = phoneMobile;
-		this.phoneWork = phoneWork;
-		this.fax = fax;
-		this.email = email;
-		this.firstName = firstName;
-		this.email2 = email2;
-		this.email3 = email3;
-		this.webPage = webPage;
-		this.birthDay = birthDay;
-		this.birthMonth = birthMonth;
-		this.birthYear = birthYear;
-		this.annyversaryDay = annyversaryDay;
-		this.annyversaryMonth = annyversaryMonth;
-		this.annyversaryYear = annyversaryYear;
-		this.group = group;
-		this.address2 = address2;
-		this.phoneHome2 = phoneHome2;
-		this.notes = notes;
-	}
 
 	public int getId() {
 		return id;
