@@ -80,8 +80,21 @@ public class ContactHelper extends HelperBase{
 		wd.findElements(By.name("selected[]")).get(index).click();
 	}
 
-	public void initContactModification(int index) {
+	public void modify(int index) {
 		wd.findElements(By.xpath("//img[@alt='Edit']")).get(index).click();
+	}
+
+	public void create(ContactData contact) {
+		initContactCreation();
+		fillContactForm(contact, true);
+		submitContactForm();
+	}
+
+
+	public void delete(int index) {
+		selectContact(index);
+		deleteSelectedContact();
+		submitContactDeletion();
 	}
 
 	public void submitContactModification() {
@@ -96,7 +109,7 @@ public class ContactHelper extends HelperBase{
 		wd.switchTo().alert().accept();
 	}
 
-	public void createContact(ContactData contact, boolean creation) {
+	public void create(ContactData contact, boolean creation) {
 		initContactCreation();
 		fillContactForm(contact, creation);
 		submitContactForm();
@@ -111,7 +124,7 @@ public class ContactHelper extends HelperBase{
 		return wd.findElements(By.name("selected[]")).size();
 	}
 
-	public List<ContactData> getContactList() {
+	public List<ContactData> list () {
 		List<ContactData> contacts = new ArrayList<ContactData>();
 		List<WebElement>  elements = wd.findElements(By.name("entry"));
 		for(WebElement element : elements) {

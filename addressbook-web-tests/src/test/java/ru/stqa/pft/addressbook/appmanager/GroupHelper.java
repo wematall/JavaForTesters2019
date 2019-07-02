@@ -48,7 +48,7 @@ public class GroupHelper extends HelperBase {
 		click(By.name("update"));
 	}
 
-	public void createGroup(GroupData group) {
+	public void create(GroupData group) {
 		initGroupCreation();
 		fillGroupForm(group);
 		submitGroupCreation();
@@ -56,7 +56,7 @@ public class GroupHelper extends HelperBase {
 	}
 
 
-	public void modifyGroup(GroupData group) {
+	public void modify(GroupData group) {
 		selectGroupById(group.getId());
 		initGroupModification();
 		fillGroupForm(group);
@@ -82,7 +82,7 @@ public class GroupHelper extends HelperBase {
 
 	}
 
-	public List<GroupData> getGroupList() {
+	public List<GroupData> list () {
 		List<GroupData> groups = new ArrayList<GroupData>();
 		List<WebElement> elements = wd.findElements(By.cssSelector("span.group"));
 		for(WebElement element : elements) {

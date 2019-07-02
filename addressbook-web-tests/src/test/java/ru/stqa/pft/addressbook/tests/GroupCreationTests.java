@@ -4,8 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import ru.stqa.pft.addressbook.model.GroupData;
 
-import java.util.Comparator;
-import java.util.List;
 import java.util.Set;
 
 
@@ -16,14 +14,14 @@ public class GroupCreationTests extends TestBase {
 
     app.goTo().groupPage();
 
-    Set<GroupData> before = app.getGroupHelper().all();
+    Set<GroupData> before = app.group().all();
 
     GroupData group = new GroupData().withGroupName("test 1");
 
-    app.getGroupHelper().createGroup(group);
+    app.group().create(group);
     app.goTo().groupPage();
 
-    Set<GroupData> after = app.getGroupHelper().all();
+    Set<GroupData> after = app.group().all();
 
     Assert.assertEquals(after.size(), before.size() + 1);
 
